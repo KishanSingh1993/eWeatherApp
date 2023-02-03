@@ -1,5 +1,6 @@
 package com.delaroystudios.weatherapp.ui.today;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -111,6 +112,7 @@ public class TodayFragment extends Fragment implements Injectable {
         });
     }
 
+    @SuppressLint("SetTextI18n")
     private void fetchUvi(Double lat, Double lon) {
         forecastViewModel.fetchUvi(lat, lon).observe(getViewLifecycleOwner(), result -> {
             UviDb uviDb = result.data;
